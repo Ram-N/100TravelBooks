@@ -1,0 +1,9 @@
+ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,author_identity_notes,Year,Primary_Region,travel_continents,Tier,Source,Notes
+1,Candidate,Through the Desert Sands,Jane Smith,female,no,no,official bio,1998,Africa,Africa,2,sample,"Classic desert memoir, literary style"
+2,Selected,Mountain Paths to Nowhere,Carlos Rodriguez,male,no,yes,publisher page,2005,South America,South America,1,sample,Popular Andean hiking memoir
+3,Candidate,Walking the Old Roads,Li Wei,nonbinary,no,yes,author website,2018,Asia,Asia,2,sample,Contemporary Chinese rural journey
+4,HonorableMention,Sailing Through Time,Margaret O'Connor,female,no,no,,1985,Europe,Europe,3,sample,Mediterranean sailing adventure
+5,Cut,Lost in the City,unknown author,unknown,unknown,unknown,,2020,Multiple,,4,sample,Contemporary urban travel
+6,Candidate,Arctic Wanderings,Sven Andersson,male,no,no,,1972,Arctic,Arctic,2,sample,Scandinavian exploration
+7,Selected,Island Hopping Tales,Keiko Tanaka,female,no,yes,wikipedia,2012,Oceania,Oceania,1,sample,Pacific islands cultural journey
+8,Candidate,The Long Road Home,David Brown,male,no,no,,1995,North America,North America,2,sample,Cross-country American road trip

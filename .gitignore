@@ -1,0 +1,17 @@
+# Never commit private content
+/private/
+/private/**
+
+# Common local / build junk
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+.idea/
+
+# Secrets
+.env
+*.key
+*.pem
+*token*
+*credentials*
