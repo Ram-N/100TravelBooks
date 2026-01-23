@@ -1,0 +1,152 @@
+ID,Status,Title,Author,Year,Primary_Region,Tier,Source,Notes
+1,Candidate,There and Then,James Salter,,Europe / France,3,gemini+user,The Alps - literary
+2,Candidate,In Patagonia,Bruce Chatwin,1977,South America,2,gemini+chatgpt+user,"Genre-defining, vignettes"
+3,Candidate,Wild,Cheryl Strayed,2012,North America,1,gemini+chatgpt+user,Pacific Crest Trail memoir
+4,Candidate,South,Ernest Shackleton,1919,Antarctica,1,gemini+chatgpt+user,Ultimate survival story
+5,Candidate,The Valleys of the Assassins,Freya Stark,1934,Middle East / Persia,4,gemini+chatgpt+user,Classic exploration
+6,Candidate,The Great Railway Bazaar,Paul Theroux,1975,Asia,1,gemini+chatgpt,Train travel classic
+7,Candidate,A Time of Gifts,Patrick Leigh Fermor,1977,Europe,2,gemini+chatgpt+user,On foot to Constantinople
+8,Candidate,A Walk in the Woods,Bill Bryson,1998,North America,1,gemini+chatgpt+user,Appalachian Trail humor
+9,Candidate,Arabian Sands,Wilfred Thesiger,1959,Middle East,2,gemini+chatgpt+user,Empty Quarter
+10,Candidate,The Road to Oxiana,Robert Byron,1937,Middle East,3,gemini+chatgpt+user,Architecture & history
+11,Candidate,Venice,Jan Morris,1960,Europe / Italy,2,gemini,Perfect city portrait
+12,Candidate,Black Lamb and Grey Falcon,Rebecca West,1941,Europe / Balkans,3,gemini+user,1000+ pages masterpiece
+13,Candidate,The Snow Leopard,Peter Matthiessen,1978,Asia / Himalayas,2,gemini+chatgpt+user,Spiritual journey
+14,Candidate,A Short Walk in the Hindu Kush,Eric Newby,1958,Asia / Afghanistan,2,gemini+chatgpt+user,Amateur adventure
+15,Candidate,Into the Wild,Jon Krakauer,1996,North America / Alaska,1,gemini+chatgpt+user,Cautionary tale
+16,Candidate,West with the Night,Beryl Markham,1942,Africa,2,gemini+chatgpt+user,Aviation memoir
+17,Candidate,Tracks,Robyn Davidson,1980,Oceania / Australia,2,gemini+chatgpt,Desert with camels
+18,Candidate,The Innocents Abroad,Mark Twain,1869,Europe / Holy Land,2,gemini+user,Satire and humor
+19,Candidate,Travels with Charley,John Steinbeck,1962,North America,2,gemini+chatgpt+user,Road trip across USA
+20,Candidate,The Old Ways,Robert Macfarlane,2012,Multiple,3,gemini+chatgpt,Philosophy of walking
+21,Candidate,The Travels,Marco Polo,1300,Asia / Silk Road,2,gemini,Historical classic
+22,Candidate,The Rihla,Ibn Battuta,1355,Islamic World,2,gemini,Medieval Islamic travel
+23,Candidate,Blue Highways,William Least Heat-Moon,1982,North America,2,gemini+chatgpt,US backroads
+24,Candidate,Kon-Tiki,Thor Heyerdahl,1950,Pacific Ocean,1,gemini+chatgpt,Raft expedition
+25,Candidate,Under the Tuscan Sun,Frances Mayes,1996,Europe / Italy,1,gemini,Expat lifestyle
+26,Candidate,From the Holy Mountain,William Dalrymple,1997,Middle East,3,gemini+chatgpt,"Christianity, scholarly"
+27,Candidate,The Shadow of the Sun,Ryszard Kapuściński,2001,Africa,2,gemini+chatgpt+user,Reportage masterpiece
+28,Candidate,Full Tilt,Dervla Murphy,1965,Asia,2,gemini+chatgpt+user,Ireland to India by bike
+29,Candidate,The Art of Travel,Alain de Botton,2002,Multiple,2,gemini+chatgpt,Philosophy of travel
+30,Candidate,A Moveable Feast,Ernest Hemingway,1964,Europe / Paris,1,gemini,Lost Generation Paris
+31,Candidate,Seven Years in Tibet,Heinrich Harrer,1952,Asia / Tibet,1,gemini+chatgpt,War memoir
+32,Candidate,Desert Solitaire,Edward Abbey,1968,North America / Utah,2,gemini+chatgpt,Wilderness environmentalism
+33,Candidate,The Rings of Saturn,W.G. Sebald,1995,Europe / UK,3,gemini+chatgpt,Experimental literary
+34,Candidate,As I Walked Out One Midsummer Morning,Laurie Lee,1969,Europe / Spain,2,gemini,Walking memoir
+35,Candidate,Eat Pray Love,Elizabeth Gilbert,2006,Multiple,1,gemini,Transformational bestseller
+36,Candidate,The Worst Journey in the World,Apsley Cherry-Garrard,1922,Antarctica,1,gemini+chatgpt,Antarctic expedition
+37,Candidate,"Wind, Sand and Stars",Antoine de Saint-Exupéry,1939,Africa / Sahara,2,gemini+chatgpt,Aviation literary
+38,Candidate,An Area of Darkness,V.S. Naipaul,1964,Asia / India,3,gemini+chatgpt,Controversial critique
+39,Candidate,Video Night in Kathmandu,Pico Iyer,1988,Asia,2,gemini+user,Pop culture analysis
+40,Candidate,Shadow of the Silk Road,Colin Thubron,2006,Asia,2,gemini+user,China to Turkey
+41,Candidate,Homage to Catalonia,George Orwell,1938,Europe / Spain,2,gemini,Civil War reportage
+42,Candidate,Brazilian Adventure,Peter Fleming,1933,South America,2,gemini,Amazon expedition
+43,Candidate,The Lost City of Z,David Grann,2009,South America / Amazon,1,gemini,Modern mystery
+44,Candidate,Vagabonding,Rolf Potts,2002,Multiple,2,gemini+user,Long-term travel guide
+45,Candidate,The Salt Path,Raynor Winn,2018,Europe / UK,3,gemini,UK coastal resilience
+46,Candidate,Holidays in Hell,P.J. O'Rourke,1988,Multiple,2,gemini,Conflict zones satire
+47,Candidate,Coming into the Country,John McPhee,1977,North America / Alaska,2,gemini,Alaska reportage
+48,Candidate,Old Glory,Jonathan Raban,1981,North America,2,gemini+user,Mississippi River
+49,Candidate,Travels with Myself and Another,Martha Gellhorn,1978,Multiple,2,gemini,War correspondent
+50,Candidate,A Cook's Tour,Anthony Bourdain,2001,Multiple,1,gemini,Culinary travel
+51,Candidate,A Year in Provence,Peter Mayle,1989,Europe / France,2,gemini,Expat comedy
+52,Candidate,Nothing to Declare,Mary Morris,1988,Central America,2,gemini,Mexico travel
+53,Candidate,The Motorcycle Diaries,Che Guevara,1993,South America,2,gemini,Political memoir
+54,Candidate,The Geography of Bliss,Eric Weiner,2008,Multiple,2,gemini+chatgpt,Happiness quest
+55,Candidate,Stranger in the Forest,Eric Hansen,1988,Asia / Borneo,2,gemini,Rainforest trekking
+56,Candidate,Iron and Silk,Mark Salzman,1986,Asia / China,2,gemini,Martial arts memoir
+57,Candidate,The River at the Center of the World,Simon Winchester,1996,Asia / China,2,gemini+user,Yangtze River
+58,Candidate,A Fortune-Teller Told Me,Tiziano Terzani,1997,Asia,2,gemini,Fate and travel
+59,Candidate,Looking for Transwonderland,Noo Saro-Wiwa,2012,Africa / Nigeria,3,gemini,Modern Nigeria
+60,Candidate,Bitter Lemons of Cyprus,Lawrence Durrell,1957,Europe / Cyprus,3,gemini,1950s political crisis
+61,Candidate,Wild Coast,John Gimlette,2011,South America,2,gemini,Guyana / Suriname
+62,Candidate,Lost in Shangri-La,Mitchell Zuckoff,2011,Oceania / New Guinea,2,gemini,WWII survival
+63,Candidate,Behind the Beautiful Forevers,Katherine Boo,2012,Asia / India,3,gemini+chatgpt,Mumbai slums reportage
+64,Candidate,The Way of the World,Nicolas Bouvier,1963,Asia,3,gemini+chatgpt,Geneva to Khyber Pass
+65,Candidate,Paris to the Moon,Adam Gopnik,2000,Europe / France,2,gemini,Paris essays
+66,Candidate,A Year in the Merde,Stephen Clarke,2004,Europe / France,4,gemini,Expat satire
+67,Candidate,Sea and Sardinia,D.H. Lawrence,1921,Europe / Italy,2,gemini,Literary travel
+68,Candidate,The Sex Lives of Cannibals,J. Maarten Troost,2004,Oceania / Kiribati,3,gemini+chatgpt,Gonzo humor
+69,Candidate,Arctic Dreams,Barry Lopez,1986,Arctic,3,gemini,Meditative nature
+70,Candidate,The Man Who Walked Through Time,Colin Fletcher,1968,North America,2,gemini,Grand Canyon
+71,Candidate,The Fearful Void,Geoffrey Moorhouse,1974,Africa / Sahara,3,gemini,Desert crossing
+72,Candidate,The Journals of Captain Cook,James Cook,1768,Pacific,2,gemini,Historical voyages
+73,Candidate,Unbeaten Tracks in Japan,Isabella Bird,1880,Asia / Japan,2,gemini,Meiji Japan
+74,Candidate,The Oregon Trail,Francis Parkman,1849,North America,2,gemini,Frontier America
+75,Candidate,Eothen,Alexander Kinglake,1844,Middle East,4,gemini,Victorian-era dated
+76,Candidate,River Town,Peter Hessler,2001,Asia / China,3,gemini+chatgpt+user,Peace Corps memoir
+77,Candidate,The Places in Between,Rory Stewart,2006,Asia / Afghanistan,2,gemini+chatgpt+user,Post-9/11 walk
+78,Candidate,Lands of Lost Borders,Kate Harris,2018,Asia / Silk Road,2,gemini,Bicycle journey
+79,Candidate,The Falling Sky,Davi Kopenawa,2013,South America / Amazon,4,gemini,Indigenous perspective
+80,Candidate,My Journey to Lhasa,Alexandra David-Néel,1927,Asia / Tibet,2,gemini,Early female explorer
+81,Candidate,Jupiter's Travels,Ted Simon,1979,Multiple,2,gemini,World by motorcycle
+82,Candidate,Travels in West Africa,Mary Kingsley,1897,Africa,2,gemini,Victorian female explorer
+83,Candidate,Blood River,Tim Butcher,2007,Africa / Congo,2,gemini,Congo River journey
+84,Candidate,Terra Incognita,Sara Wheeler,1996,Antarctica,2,gemini,Female Antarctic
+85,Candidate,Into the Heart of Borneo,Redmond O'Hanlon,1984,Asia / Borneo,2,gemini+chatgpt+user,Humor and adventure
+86,Candidate,The Caliph's House,Tahir Shah,2006,Africa / Morocco,2,gemini+chatgpt,Expat in Casablanca
+87,Candidate,One for the Road,Tony Horwitz,1987,Oceania / Australia,2,gemini,Hitchhiking
+88,Candidate,The Solace of Open Spaces,Gretel Ehrlich,1985,North America / Wyoming,2,gemini,Nature writing
+89,Candidate,The Narrow Road to the Deep North,Matsuo Bashō,1702,Asia / Japan,4,gemini,17th C haiku travel
+90,Candidate,The Voyage of the Beagle,Charles Darwin,1839,South America,2,gemini,Scientific expedition
+91,Candidate,Around the World on a Bicycle,Thomas Stevens,1887,Multiple,2,gemini,1880s cycling
+92,Candidate,The Cruel Way,Ella Maillart,1947,Asia / Afghanistan,3,gemini,Wartime journey
+93,Candidate,Poisoned Arrows,George Monbiot,1989,Oceania / West Papua,4,gemini,Activist obscure
+94,Candidate,The Lawless Roads,Graham Greene,1939,North America / Mexico,3,gemini,Political journey
+95,Candidate,The Gentleman in the Parlour,W. Somerset Maugham,1930,Asia,3,gemini,SE Asia literary
+96,Candidate,Travels with a Donkey in the Cévennes,Robert Louis Stevenson,1879,Europe / France,2,gemini,Classic walking
+97,Candidate,The Journal of a Tour to the Hebrides,James Boswell,1785,Europe / Scotland,3,gemini,18th C Scotland
+98,Candidate,A Small Place,Jamaica Kincaid,1988,Caribbean / Antigua,3,gemini,Anti-tourism essay
+99,Candidate,In an Antique Land,Amitav Ghosh,1992,Africa / Egypt,3,gemini,Historical layered
+100,Candidate,Tiger of the Snows,Tenzing Norgay,1955,Asia / Himalayas,3,gemini,Everest climb
+101,Candidate,Slowly Down the Ganges,Eric Newby,1966,Asia / India,2,user,River journey
+102,Candidate,Winter in Arabia,Freya Stark,1940,Middle East,3,chatgpt,Classic exploration
+103,Candidate,Dark Star Safari,Paul Theroux,2002,Africa,2,chatgpt,Cairo to Cape Town
+104,Candidate,Notes from a Small Island,Bill Bryson,1995,Europe / UK,2,chatgpt,Britain humor
+105,Candidate,Neither Here nor There,Bill Bryson,1991,Europe,2,chatgpt,Europe backpacking
+106,Candidate,Into Thin Air,Jon Krakauer,1997,Asia / Himalayas,1,chatgpt+user,Everest disaster
+107,Candidate,The Old Patagonian Express,Paul Theroux,1979,South America,2,chatgpt,Train to Patagonia
+108,Candidate,Between the Woods and the Water,Patrick Leigh Fermor,1986,Europe,2,chatgpt,Fermor sequel
+109,Candidate,The Broken Road,Patrick Leigh Fermor,2013,Europe / Asia,3,chatgpt,Posthumous Fermor
+110,Candidate,Imperium,Ryszard Kapuściński,1993,Europe / Soviet Union,2,chatgpt,Soviet collapse
+111,Candidate,The Songlines,Bruce Chatwin,1987,Oceania / Australia,2,chatgpt+user,Aboriginal philosophy
+112,Candidate,Nine Lives,William Dalrymple,2009,Asia / India,2,chatgpt,Sacred India
+113,Candidate,In Xanadu,William Dalrymple,1989,Asia,2,chatgpt,Kubla Khan quest
+114,Candidate,The Happy Isles of Oceania,Paul Theroux,1992,Oceania,2,chatgpt,Pacific kayaking
+115,Candidate,Oracle Bones,Peter Hessler,2006,Asia / China,2,chatgpt,China archaeology
+116,Candidate,Out of Africa,Isak Dinesen,1937,Africa / Kenya,1,chatgpt,Classic memoir
+117,Candidate,A House in Bali,Colin McPhee,1946,Asia / Indonesia,3,chatgpt,Musical memoir
+118,Candidate,No Mercy,Redmond O'Hanlon,1997,Africa / Congo,2,chatgpt,Jungle adventure
+119,Candidate,Pilgrim at Tinker Creek,Annie Dillard,1974,North America,2,chatgpt,Nature meditation
+120,Candidate,A Turn in the South,V.S. Naipaul,1989,North America,2,chatgpt,American South
+121,Candidate,Among the Believers,V.S. Naipaul,1981,Multiple,3,chatgpt,Islamic world
+122,Candidate,The Lost Continent,Bill Bryson,1989,North America,2,chatgpt,Small-town America
+123,Candidate,In a Sunburned Country,Bill Bryson,2000,Oceania / Australia,2,chatgpt,Australia humor
+124,Candidate,A Fortunate Traveller,Eric Newby,1994,Multiple,3,chatgpt,Anthology of travels
+125,Candidate,A Writer's World,Jan Morris,2003,Multiple,2,chatgpt,Travel essays
+126,Candidate,Trieste and the Meaning of Nowhere,Jan Morris,2001,Europe / Italy,2,chatgpt,City meditation
+127,Candidate,A Pattern of Islands,Arthur Grimble,1952,Oceania,3,chatgpt,Colonial Pacific
+128,Candidate,The Japanese Journey,Nicolas Bouvier,1989,Asia / Japan,3,chatgpt,Japan travel
+129,Candidate,Slow Boats to China,Gavin Young,1983,Asia,2,chatgpt,Sea voyage
+130,Candidate,The Zanzibar Chest,Aidan Hartley,2003,Africa,2,user,War correspondent
+131,Candidate,At the Tomb of the Inflatable Pig,Matthew Parris,2003,South America / Paraguay,2,user,Offbeat Paraguay
+132,Candidate,India,Geoffrey Moorehead,,,Asia / India,3,user,Incomplete - verify author
+133,Candidate,Travels with Herodotus,Ryszard Kapuściński,2007,Multiple,2,user,Philosophical reportage
+134,Candidate,Journey without Maps,Graham Greene,1936,Africa / Liberia,3,user,West Africa trek
+135,Candidate,Apples are from Kazakhstan,Christopher Robbins,2008,Asia / Kazakhstan,3,user,Central Asia obscure
+136,Candidate,Hearing Birds Fly,Louisa Waugh,2003,Asia / Mongolia,3,user,Mongolia immersion
+137,Candidate,Flame Trees of Thika,Elspeth Huxley,1959,Africa / Kenya,2,user,Childhood memoir
+138,Candidate,Somebody's Heart is Burning,Tanya Shaffer,2003,Africa,2,user,West Africa journey
+139,Candidate,The Ponds of Kalambayi,Mike Tidwell,1990,Africa,3,user,Peace Corps Congo
+140,Candidate,Eiger Dreams,Jon Krakauer,1990,Multiple,2,user,Mountaineering essays
+141,Candidate,The World Is a Carpet,Anna Badkhen,2013,Asia / Afghanistan,3,user,War zone immersion
+142,Candidate,Maximum City,Suketu Mehta,2004,Asia / India,2,chatgpt+user,Mumbai narrative
+143,Candidate,City of Djinns,William Dalrymple,1993,Asia / India,2,user,Delhi historical
+144,Candidate,This Divided Island,Samanth Subramanian,2014,Asia / Sri Lanka,3,user,Sri Lankan conflict
+145,Candidate,From Heaven Lake,Vikram Seth,1983,Asia / China,2,chatgpt+user,Hitchhiking China
+146,Candidate,Endurance,Alfred Lansing,1959,Antarctica,1,user,Shackleton expedition (3rd person)
+147,Candidate,Naples '44,Norman Lewis,1978,Europe / Italy,2,user,WWII Naples
+148,Duplicate,Old Glory,Jonathan Raban,1981,North America,2,user,Already in database as ID 48
+149,Candidate,In Morocco,Edith Wharton,1920,Africa / Morocco,3,user,Classic Morocco travel
+150,Candidate,Walking with Abel: Journeys with the Nomads of the African Savannah,Anna Badkhen,2015,Africa / Mali,3,user,Fulani herders migration
+151,Candidate,India: Travel Impressions,Enrico Bertarelli,1909,Asia / India,4,user,Early Italian travelogue (orig: Impressioni di viaggio)
