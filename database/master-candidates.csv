@@ -10,7 +10,7 @@ ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,au
 9,Completed,Arabian Sands,Wilfred Thesiger,unknown,unknown,unknown,,1959,Middle East,Asia,2,gemini+chatgpt+user,Empty Quarter
 10,Completed,The Road to Oxiana,Robert Byron,unknown,unknown,unknown,,1937,Middle East,Asia,3,gemini+chatgpt+user,Architecture & history
 11,Completed,Venice,Jan Morris,unknown,unknown,unknown,,1960,Europe / Italy,Europe,2,gemini,Perfect city portrait
-12,Candidate,Black Lamb and Grey Falcon,Rebecca West,unknown,unknown,unknown,,1941,Europe / Balkans,Europe,3,gemini+user,1000+ pages masterpiece
+12,Completed,Black Lamb and Grey Falcon,Rebecca West,unknown,unknown,unknown,,1941,Europe / Balkans,Europe,3,gemini+user,1000+ pages masterpiece
 13,Completed,The Snow Leopard,Peter Matthiessen,unknown,unknown,unknown,,1978,Asia / Himalayas,Asia,2,gemini+chatgpt+user,Spiritual journey
 14,Completed,A Short Walk in the Hindu Kush,Eric Newby,unknown,unknown,unknown,,1958,Asia / Afghanistan,Asia,2,gemini+chatgpt+user,Amateur adventure
 15,Completed,Into the Wild,Jon Krakauer,unknown,unknown,unknown,,1996,North America / Alaska,North America,1,gemini+chatgpt+user,Cautionary tale
@@ -18,7 +18,7 @@ ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,au
 17,Candidate,Tracks,Robyn Davidson,unknown,unknown,unknown,,1980,Oceania / Australia,Oceania,2,gemini+chatgpt,Desert with camels
 18,Candidate,The Innocents Abroad,Mark Twain,unknown,unknown,unknown,,1869,Europe / Holy Land,Europe,2,gemini+user,Satire and humor
 19,Completed,Travels with Charley,John Steinbeck,unknown,unknown,unknown,,1962,North America,North America,2,gemini+chatgpt+user,Road trip across USA
-20,Candidate,The Old Ways,Robert Macfarlane,unknown,unknown,unknown,,2012,Multiple,,3,gemini+chatgpt,Philosophy of walking
+20,Completed,The Old Ways,Robert Macfarlane,unknown,unknown,unknown,,2012,Multiple,,3,gemini+chatgpt,Philosophy of walking
 21,Candidate,The Travels,Marco Polo,unknown,unknown,unknown,,1300,Asia / Silk Road,Asia,2,gemini,Historical classic
 22,Candidate,The Rihla,Ibn Battuta,unknown,unknown,unknown,,1355,Islamic World,,2,gemini,Medieval Islamic travel
 23,Completed,Blue Highways,William Least Heat-Moon,unknown,unknown,unknown,,1982,North America,North America,2,gemini+chatgpt,US backroads
@@ -32,7 +32,7 @@ ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,au
 31,Candidate,Seven Years in Tibet,Heinrich Harrer,unknown,unknown,unknown,,1952,Asia / Tibet,Asia,1,gemini+chatgpt,War memoir
 32,Candidate,Desert Solitaire,Edward Abbey,unknown,unknown,unknown,,1968,North America / Utah,North America,2,gemini+chatgpt,Wilderness environmentalism
 33,Candidate,The Rings of Saturn,W.G. Sebald,unknown,unknown,unknown,,1995,Europe / UK,Europe,3,gemini+chatgpt,Experimental literary
-34,Candidate,As I Walked Out One Midsummer Morning,Laurie Lee,unknown,unknown,unknown,,1969,Europe / Spain,Europe,2,gemini,Walking memoir
+34,Completed,As I Walked Out One Midsummer Morning,Laurie Lee,unknown,unknown,unknown,,1969,Europe / Spain,Europe,2,gemini,Walking memoir
 35,Completed,Eat Pray Love,Elizabeth Gilbert,unknown,unknown,unknown,,2006,Multiple,,1,gemini,Transformational bestseller
 36,Completed,The Worst Journey in the World,Apsley Cherry-Garrard,unknown,unknown,unknown,,1922,Antarctica,Antarctica,1,gemini+chatgpt,Antarctic expedition
 37,Candidate,"Wind, Sand and Stars",Antoine de Saint-Exupéry,unknown,unknown,unknown,,1939,Africa / Sahara,Africa,2,gemini+chatgpt,Aviation literary
@@ -145,7 +145,7 @@ ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,au
 144,Candidate,This Divided Island,Samanth Subramanian,unknown,unknown,unknown,,2014,Asia / Sri Lanka,Asia,3,user,Sri Lankan conflict
 145,Completed,From Heaven Lake,Vikram Seth,unknown,unknown,unknown,,1983,Asia / China,Asia,2,chatgpt+user,Hitchhiking China
 146,Completed,Endurance,Alfred Lansing,unknown,unknown,unknown,,1959,Antarctica,Antarctica,1,user,Shackleton expedition (3rd person)
-147,Candidate,Naples '44,Norman Lewis,unknown,unknown,unknown,,1978,Europe / Italy,Europe,2,user,WWII Naples
+147,Completed,Naples '44,Norman Lewis,unknown,unknown,unknown,,1978,Europe / Italy,Europe,2,user,WWII Naples
 149,Candidate,In Morocco,Edith Wharton,unknown,unknown,unknown,,1920,Africa / Morocco,Africa,3,user,Classic Morocco travel
 150,Candidate,Walking with Abel: Journeys with the Nomads of the African Savannah,Anna Badkhen,unknown,unknown,unknown,,2015,Africa / Mali,Africa,3,user,Fulani herders migration
 151,Cut,India: Travel Impressions,Enrico Bertarelli,unknown,unknown,unknown,,1909,Asia / India,Asia,4,user,Early Italian travelogue (orig: Impressioni di viaggio)
@@ -156,3 +156,6 @@ ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,au
 156,Completed,News from Tartary,Peter Fleming,male,no,no,,1935,Asia / Central Asia,Asia,2,user,Peking to Kashmir across Xinjiang - Silk Road adventure with Ella Maillart
 157,Completed,The Great Game,Peter Hopkirk,male,no,no,,1990,Asia / Central Asia,Asia,2,user,Historical narrative of British-Russian rivalry in Central Asia
 158,Completed,Passage to Juneau,Jonathan Raban,male,no,no,,1999,North America / Pacific Northwest,North America,2,user,Solo sailing Inside Passage - maritime literature with grief and indigenous history
+159,Completed,Travels with a Tangerine,Tim Mackintosh-Smith,male,no,no,,2001,North Africa / Middle East,Africa|Asia,2,user,Following Ibn Battutah from Morocco to Turkey - historical footsteps with Arabic scholarship
+160,Completed,Roads to Santiago,Cees Nooteboom,male,no,no,,1992,Europe / Spain,Europe,3,user,Wandering through Spain hunting Romanesque churches and Zurbarán paintings - literary detours
+161,Completed,Border,Kapka Kassabova,female,no,no,,2017,Europe / Balkans,Europe,3,user,Bulgaria-Turkey-Greece borderlands - Cold War ghosts and refugee stories

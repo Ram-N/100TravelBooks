@@ -2,8 +2,9 @@
 """
 update_status.py - Sync database Status field with completed writeups
 
-Scans book-writeups/ directory for completed .md files and updates the
-master-candidates.csv database to mark those books as "Completed".
+Scans book-writeups/ directory for completed .md files, reads the actual title
+from inside each file, and updates the master-candidates.csv database to mark
+those books as "Completed".
 
 Usage:
     python update_status.py                 # Dry run (preview changes)
@@ -16,199 +17,152 @@ import csv
 import re
 import sys
 import shutil
-import unicodedata
 from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Any, Tuple
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# FILENAME MATCHING (same logic as recommend_next.py)
+# TITLE EXTRACTION FROM WRITEUP FILES
 # ═══════════════════════════════════════════════════════════════════════════
 
-def normalize_for_filename(text: str) -> str:
-    """Normalize text for filename matching."""
-    if not text:
+def extract_title_from_writeup(filepath: Path) -> str:
+    """
+    Extract the book title from a writeup .md file.
+
+    Looks for patterns like:
+    - # **# [Entry Number] — Title**
+    - # XX — Title
+    - # Title
+
+    Returns the title, or None if not found.
+    """
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            # Read first 20 lines (title should be near the top)
+            for i, line in enumerate(f):
+                if i > 20:
+                    break
+
+                line = line.strip()
+
+                # Skip empty lines and horizontal rules
+                if not line or line.startswith('---'):
+                    continue
+
+                # Look for markdown headers - must be single # (not ## or ###)
+                # Pattern: # **# [Entry Number] — Title** or # XX — Title or # Title
+                if line.startswith('# '):
+                    # Skip author sections and other metadata
+                    if any(keyword in line.lower() for keyword in ['the author', 'author:', 'essentials', 'book:']):
+                        continue
+
+                    # Skip lines with birth/death years like (1902–1986)
+                    if re.search(r'\(\d{4}[–-]\d{4}\)', line):
+                        continue
+
+                    # Check for em-dash separator (—)
+                    if '—' in line:
+                        # Extract everything after the em-dash
+                        parts = line.split('—', 1)
+                        if len(parts) == 2:
+                            title = parts[1].strip()
+                            # Remove markdown formatting and brackets
+                            title = re.sub(r'\*+', '', title)
+                            title = re.sub(r'\[.*?\]', '', title)
+                            title = title.strip()
+                            if title and len(title) > 2:
+                                return title
+
+                    # No separator - just take the header text as-is
+                    else:
+                        title = line.lstrip('#').strip()
+                        # Remove markdown formatting and brackets
+                        title = re.sub(r'\*+', '', title)
+                        title = re.sub(r'\[.*?\]', '', title)
+                        # Remove placeholder entry numbers like "XX:" or "XX :" or "##:"
+                        title = re.sub(r'^[X#]+\s*:\s*', '', title)
+                        title = title.strip()
+                        # Make sure it's a reasonable title (not just "XX" or similar)
+                        if title and len(title) > 3 and not re.match(r'^[IVX]+$', title):
+                            return title
+
+        return None
+
+    except Exception as e:
+        print(f"Warning: Could not read {filepath.name}: {e}", file=sys.stderr)
+        return None
+
+
+def normalize_title_for_matching(title: str) -> str:
+    """
+    Normalize a title for case-insensitive matching.
+    Removes extra whitespace and standardizes quotes.
+    """
+    if not title:
         return ""
 
-    # Convert to lowercase
-    text = text.lower()
+    # Normalize whitespace
+    title = ' '.join(title.split())
 
-    # Strip subtitles (anything after colon or em-dash)
-    text = re.split(r'[:\u2014]', text)[0]
+    # Normalize quotes
+    title = title.replace('"', '"').replace('"', '"')
+    title = title.replace(''', "'").replace(''', "'")
 
-    # Normalize Unicode characters to ASCII equivalents (ś→s, ñ→n, etc.)
-    text = unicodedata.normalize('NFKD', text)
-    text = text.encode('ascii', 'ignore').decode('ascii')
-
-    # Remove common articles at the start
-    text = re.sub(r'^(the|a|an)\s+', '', text)
-
-    # Remove punctuation and special characters
-    text = re.sub(r'[^\w\s-]', '', text)
-
-    # Replace spaces with hyphens
-    text = re.sub(r'\s+', '-', text)
-
-    # Remove multiple consecutive hyphens
-    text = re.sub(r'-+', '-', text)
-
-    # Strip leading/trailing hyphens
-    text = text.strip('-')
-
-    return text
+    return title.strip()
 
 
-def generate_filename_candidates(title: str, author: str) -> List[str]:
-    """Generate possible filename patterns for matching."""
-    candidates = []
-
-    # Normalize title and author
-    title_norm = normalize_for_filename(title)
-    author_norm = normalize_for_filename(author)
-
-    # Generate title variations:
-    # 1. Remove articles only
-    title_no_articles = re.sub(r'\b(the|a|an)\b', '', title_norm)
-    title_no_articles = re.sub(r'-+', '-', title_no_articles).strip('-')
-
-    # 2. Remove both articles AND common prepositions (more forgiving)
-    title_minimal = re.sub(r'\b(the|a|an|at|of|in|on|from|to|with|by|for)\b', '', title_norm)
-    title_minimal = re.sub(r'-+', '-', title_minimal).strip('-')
-
-    # Extract author last name (assume last word)
-    author_parts = author_norm.split('-')
-    author_lastname = author_parts[-1] if author_parts else author_norm
-
-    # Generate all pattern variations
-    variations = []
-
-    # Full title (with articles/prepositions)
-    variations.append((title_norm, 'full'))
-
-    # No articles
-    if title_no_articles != title_norm:
-        variations.append((title_no_articles, 'no_articles'))
-
-    # Minimal (no articles or prepositions)
-    if title_minimal != title_norm and title_minimal != title_no_articles:
-        variations.append((title_minimal, 'minimal'))
-
-    # Generate candidates for each variation
-    for title_var, var_type in variations:
-        if not title_var:
-            continue
-
-        # Pattern: title-author
-        if author_norm:
-            candidates.append(f"{title_var}-{author_norm}")
-
-        # Pattern: title-lastname
-        if author_lastname and author_lastname != author_norm:
-            candidates.append(f"{title_var}-{author_lastname}")
-
-        # Pattern: title only
-        candidates.append(title_var)
-
-    # Remove duplicates while preserving order
-    seen = set()
-    unique_candidates = []
-    for c in candidates:
-        if c not in seen:
-            seen.add(c)
-            unique_candidates.append(c)
-
-    return unique_candidates
-
-
-def fuzzy_match_score(candidate: str, filename: str) -> float:
+def find_book_in_database(title: str, rows: List[Dict[str, Any]]) -> Dict[str, Any]:
     """
-    Calculate fuzzy match score between candidate and filename.
+    Find a book in the database by exact title match (case-insensitive).
+    Also matches if the main title matches (ignoring subtitles after colon).
 
-    Returns a score from 0.0 (no match) to 1.0 (perfect match).
-    Score is based on word overlap percentage.
+    Returns the matching row, or None if not found.
     """
-    # Split into words
-    candidate_words = set(candidate.split('-'))
-    filename_words = set(filename.split('-'))
+    normalized_title = normalize_title_for_matching(title).lower()
 
-    # Remove empty strings, very short words, and common prepositions (noise)
-    stop_words = {'in', 'on', 'at', 'to', 'of', 'the', 'a', 'an', 'up', 'down', 'by', 'with', 'from', 'for'}
-    candidate_words = {w for w in candidate_words if len(w) > 1 and w not in stop_words}
-    filename_words = {w for w in filename_words if len(w) > 1 and w not in stop_words}
+    # Also create version without subtitle (everything before colon)
+    title_no_subtitle = normalized_title.split(':')[0].strip()
 
-    if not candidate_words or not filename_words:
-        return 0.0
+    for row in rows:
+        db_title = normalize_title_for_matching(row.get('Title', '')).lower()
+        db_title_no_subtitle = db_title.split(':')[0].strip()
 
-    # Calculate overlap with exact matches
-    overlap = candidate_words & filename_words
+        # Match either full title or main title (without subtitle)
+        if normalized_title == db_title or title_no_subtitle == db_title_no_subtitle:
+            return row
 
-    # Also check for partial word matches (handles singular/plural, typos)
-    partial_matches = 0
-    for c_word in candidate_words - overlap:
-        for f_word in filename_words - overlap:
-            # Check if one word is a substring of the other (handles valley/valleys)
-            # OR if they're very similar (handles typos like assasins/assassins)
-            if c_word in f_word or f_word in c_word:
-                partial_matches += 1
-                break
-            # Check Levenshtein-like similarity (allow 1-2 char difference)
-            if len(c_word) >= 4 and len(f_word) >= 4:
-                if abs(len(c_word) - len(f_word)) <= 2:
-                    # Simple character overlap check
-                    common_chars = sum((set(c_word) & set(f_word)).__len__() for _ in [1])
-                    if common_chars >= min(len(c_word), len(f_word)) - 2:
-                        partial_matches += 0.5
-                        break
-
-    # Score based on what percentage of candidate words appear in filename
-    total_matches = len(overlap) + partial_matches
-    score = total_matches / len(candidate_words) if candidate_words else 0.0
-
-    return score
-
-
-def is_book_completed(title: str, author: str, completed_files: List[str]) -> bool:
-    """Check if a book has been completed based on filename matching."""
-    candidates = generate_filename_candidates(title, author)
-
-    for candidate in candidates:
-        # Check for exact match
-        if candidate in completed_files:
-            return True
-
-        # Check for substring match (handles variations)
-        for completed in completed_files:
-            if candidate in completed or completed in candidate:
-                return True
-
-            # Fuzzy match: if 75%+ of candidate words appear in filename, it's a match
-            score = fuzzy_match_score(candidate, completed)
-            if score >= 0.75:
-                return True
-
-    return False
+    return None
 
 
 # ═══════════════════════════════════════════════════════════════════════════
 # DATA LOADING
 # ═══════════════════════════════════════════════════════════════════════════
 
-def get_completed_files(writeups_dir: Path) -> List[str]:
-    """Get list of completed writeup filenames (without .md extension)."""
+def get_completed_titles(writeups_dir: Path) -> Dict[str, Path]:
+    """
+    Get titles from completed writeup files by reading them.
+
+    Returns dict mapping title -> filepath.
+    """
     if not writeups_dir.exists():
         print(f"Warning: Writeups directory not found: {writeups_dir}", file=sys.stderr)
-        return []
+        return {}
 
-    # Get all .md files and remove extension
-    # Exclude workspace files and other non-book files
-    completed = []
-    for f in writeups_dir.glob('*.md'):
+    completed_titles = {}
+
+    for filepath in writeups_dir.glob('*.md'):
         # Skip workspace files and other non-book files
-        if f.stem not in ['workspace', 'README', 'TEMPLATE']:
-            completed.append(f.stem)
+        if filepath.stem in ['workspace', 'README', 'TEMPLATE', 'INDEX']:
+            continue
 
-    return completed
+        title = extract_title_from_writeup(filepath)
+        if title:
+            completed_titles[title] = filepath
+        else:
+            print(f"Warning: Could not extract title from {filepath.name}", file=sys.stderr)
+
+    return completed_titles
 
 
 def load_database(db_path: Path) -> Tuple[List[str], List[Dict[str, Any]]]:
@@ -247,11 +201,16 @@ def create_backup(db_path: Path) -> Path:
 
 def update_status(
     rows: List[Dict[str, Any]],
-    completed_files: List[str],
+    completed_titles: Dict[str, Path],
     target_status: str = 'Completed'
 ) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     """
     Update Status field for completed books.
+
+    Args:
+        rows: Database rows
+        completed_titles: Dict mapping title -> filepath
+        target_status: Status to set for completed books
 
     Returns:
         (updated_rows, changes) where changes is a list of dicts with update info
@@ -264,9 +223,15 @@ def update_status(
         author = row.get('Author', '')
         current_status = row.get('Status', '').strip()
 
-        # Check if this book has a completed writeup
-        if is_book_completed(title, author, completed_files):
-            # Update if status is NOT already "Completed"
+        # Check if this book has a completed writeup (by exact title match)
+        matching_book = find_book_in_database(title, [{'Title': t} for t in completed_titles.keys()])
+
+        if matching_book:
+            # Found a matching writeup file
+            matched_title = matching_book['Title']
+            filepath = completed_titles[matched_title]
+
+            # Update if status is NOT already the target status
             if current_status != target_status:
                 # Create updated row
                 updated_row = row.copy()
@@ -279,6 +244,7 @@ def update_status(
                     'author': author,
                     'old_status': current_status,
                     'new_status': target_status,
+                    'file': filepath.name,
                 })
             else:
                 # Already has correct status, keep as-is
@@ -317,6 +283,7 @@ def format_changes(changes: List[Dict[str, Any]], dry_run: bool = True) -> str:
     for i, change in enumerate(changes, 1):
         lines.append(f"{i}. {change['title']} by {change['author']}")
         lines.append(f"   Status: {change['old_status']} → {change['new_status']}")
+        lines.append(f"   File:   {change['file']}")
         lines.append("")
 
     lines.append("═" * 70)
@@ -380,16 +347,23 @@ Examples:
     print(f"Total books in database: {len(rows)}")
 
     print(f"\nScanning completed writeups: {writeups_dir}")
-    completed_files = get_completed_files(writeups_dir)
-    print(f"Completed writeup files found: {len(completed_files)}")
+    completed_titles = get_completed_titles(writeups_dir)
+    print(f"Completed writeup files found: {len(completed_titles)}")
 
-    if not completed_files:
+    if not completed_titles:
         print("\nNo completed writeup files found. Nothing to update.")
         sys.exit(0)
 
+    # Show what titles were extracted
+    if completed_titles:
+        print("\nExtracted titles from writeups:")
+        for title in sorted(completed_titles.keys()):
+            print(f"  • {title}")
+        print()
+
     # Perform update
-    print(f"\nAnalyzing status changes (target status: '{args.status_to}')...")
-    updated_rows, changes = update_status(rows, completed_files, args.status_to)
+    print(f"Analyzing status changes (target status: '{args.status_to}')...")
+    updated_rows, changes = update_status(rows, completed_titles, args.status_to)
 
     # Display results
     print("\n")
