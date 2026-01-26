@@ -18,6 +18,7 @@ import argparse
 import csv
 import re
 import sys
+import unicodedata
 from pathlib import Path
 from typing import List, Dict, Any, Tuple
 from collections import Counter
@@ -117,6 +118,13 @@ def normalize_for_filename(text: str) -> str:
     # Convert to lowercase
     text = text.lower()
 
+    # Strip subtitles (anything after colon or em-dash)
+    text = re.split(r'[:\u2014]', text)[0]
+
+    # Normalize Unicode characters to ASCII equivalents (ś→s, ñ→n, etc.)
+    text = unicodedata.normalize('NFKD', text)
+    text = text.encode('ascii', 'ignore').decode('ascii')
+
     # Remove common articles at the start
     text = re.sub(r'^(the|a|an)\s+', '', text)
 
@@ -143,23 +151,105 @@ def generate_filename_candidates(title: str, author: str) -> List[str]:
     title_norm = normalize_for_filename(title)
     author_norm = normalize_for_filename(author)
 
+    # Generate title variations:
+    # 1. Remove articles only
+    title_no_articles = re.sub(r'\b(the|a|an)\b', '', title_norm)
+    title_no_articles = re.sub(r'-+', '-', title_no_articles).strip('-')
+
+    # 2. Remove both articles AND common prepositions (more forgiving)
+    title_minimal = re.sub(r'\b(the|a|an|at|of|in|on|from|to|with|by|for)\b', '', title_norm)
+    title_minimal = re.sub(r'-+', '-', title_minimal).strip('-')
+
     # Extract author last name (assume last word)
     author_parts = author_norm.split('-')
     author_lastname = author_parts[-1] if author_parts else author_norm
 
-    # Pattern 1: title-author
-    if title_norm and author_norm:
-        candidates.append(f"{title_norm}-{author_norm}")
+    # Generate all pattern variations
+    variations = []
 
-    # Pattern 2: title-lastname
-    if title_norm and author_lastname:
-        candidates.append(f"{title_norm}-{author_lastname}")
+    # Full title (with articles/prepositions)
+    variations.append((title_norm, 'full'))
 
-    # Pattern 3: title only
-    if title_norm:
-        candidates.append(title_norm)
+    # No articles
+    if title_no_articles != title_norm:
+        variations.append((title_no_articles, 'no_articles'))
 
-    return candidates
+    # Minimal (no articles or prepositions)
+    if title_minimal != title_norm and title_minimal != title_no_articles:
+        variations.append((title_minimal, 'minimal'))
+
+    # Generate candidates for each variation
+    for title_var, var_type in variations:
+        if not title_var:
+            continue
+
+        # Pattern: title-author
+        if author_norm:
+            candidates.append(f"{title_var}-{author_norm}")
+
+        # Pattern: title-lastname
+        if author_lastname and author_lastname != author_norm:
+            candidates.append(f"{title_var}-{author_lastname}")
+
+        # Pattern: title only
+        candidates.append(title_var)
+
+    # Remove duplicates while preserving order
+    seen = set()
+    unique_candidates = []
+    for c in candidates:
+        if c not in seen:
+            seen.add(c)
+            unique_candidates.append(c)
+
+    return unique_candidates
+
+
+def fuzzy_match_score(candidate: str, filename: str) -> float:
+    """
+    Calculate fuzzy match score between candidate and filename.
+
+    Returns a score from 0.0 (no match) to 1.0 (perfect match).
+    Score is based on word overlap percentage.
+    """
+    # Split into words
+    candidate_words = set(candidate.split('-'))
+    filename_words = set(filename.split('-'))
+
+    # Remove empty strings, very short words, and common prepositions (noise)
+    stop_words = {'in', 'on', 'at', 'to', 'of', 'the', 'a', 'an', 'up', 'down', 'by', 'with', 'from', 'for'}
+    candidate_words = {w for w in candidate_words if len(w) > 1 and w not in stop_words}
+    filename_words = {w for w in filename_words if len(w) > 1 and w not in stop_words}
+
+    if not candidate_words or not filename_words:
+        return 0.0
+
+    # Calculate overlap with exact matches
+    overlap = candidate_words & filename_words
+
+    # Also check for partial word matches (handles singular/plural, typos)
+    partial_matches = 0
+    for c_word in candidate_words - overlap:
+        for f_word in filename_words - overlap:
+            # Check if one word is a substring of the other (handles valley/valleys)
+            # OR if they're very similar (handles typos like assasins/assassins)
+            if c_word in f_word or f_word in c_word:
+                partial_matches += 1
+                break
+            # Check Levenshtein-like similarity (allow 1-2 char difference)
+            if len(c_word) >= 4 and len(f_word) >= 4:
+                if abs(len(c_word) - len(f_word)) <= 2:
+                    # Simple character overlap check
+                    common_chars = sum((set(c_word) & set(f_word)).__len__() for _ in [1])
+                    if common_chars >= min(len(c_word), len(f_word)) - 2:
+                        partial_matches += 0.5
+                        break
+
+    # Score based on what percentage of candidate words appear in filename
+    total_matches = len(overlap) + partial_matches
+    score = total_matches / len(candidate_words) if candidate_words else 0.0
+
+    return score
 
 
 def is_book_completed(title: str, author: str, completed_files: List[str]) -> bool:
@@ -174,6 +264,11 @@ def is_book_completed(title: str, author: str, completed_files: List[str]) -> bo
         # Check for substring match (handles variations)
         for completed in completed_files:
             if candidate in completed or completed in candidate:
+                return True
+
+            # Fuzzy match: if 75%+ of candidate words appear in filename, it's a match
+            score = fuzzy_match_score(candidate, completed)
+            if score >= 0.75:
                 return True
 
     return False

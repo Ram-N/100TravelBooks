@@ -196,8 +196,8 @@ Examples:
     # Field options
     parser.add_argument(
         '--fields',
-        default='title,author,year,primary_region,status',
-        help='Comma-separated fields to display [default: title,author,year,primary_region,status]'
+        default='title,author,year,primary_region,status,tier,source',
+        help='Comma-separated fields to display [default: title,author,year,primary_region,status,tier,source]'
     )
     parser.add_argument(
         '--search-fields',
