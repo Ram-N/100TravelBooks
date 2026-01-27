@@ -1,7 +1,7 @@
 ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,author_identity_notes,Year,Primary_Region,travel_continents,Tier,Source,Notes
 1,Completed,There and Then,James Salter,unknown,unknown,unknown,,,Europe / France,Europe,3,gemini+user,The Alps - literary
 2,Completed,In Patagonia,Bruce Chatwin,unknown,unknown,unknown,,1977,South America,South America,2,gemini+chatgpt+user,"Genre-defining, vignettes"
-3,Completed,Wild,Cheryl Strayed,unknown,unknown,unknown,,2012,North America,North America,1,gemini+chatgpt+user,Pacific Crest Trail memoir
+3,HonorableMention,Wild,Cheryl Strayed,unknown,unknown,unknown,,2012,North America,North America,1,gemini+chatgpt+user,Pacific Crest Trail memoir
 4,Completed,South,Ernest Shackleton,unknown,unknown,unknown,,1919,Antarctica,Antarctica,1,gemini+chatgpt+user,Ultimate survival story
 5,Completed,The Valleys of the Assassins,Freya Stark,unknown,unknown,unknown,,1934,Middle East / Persia,Asia,4,gemini+chatgpt+user,Classic exploration
 6,Completed,The Great Railway Bazaar,Paul Theroux,unknown,unknown,unknown,,1975,Asia,Asia,1,gemini+chatgpt,Train travel classic
@@ -15,7 +15,7 @@ ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,au
 14,Completed,A Short Walk in the Hindu Kush,Eric Newby,unknown,unknown,unknown,,1958,Asia / Afghanistan,Asia,2,gemini+chatgpt+user,Amateur adventure
 15,Completed,Into the Wild,Jon Krakauer,unknown,unknown,unknown,,1996,North America / Alaska,North America,1,gemini+chatgpt+user,Cautionary tale
 16,Completed,West with the Night,Beryl Markham,unknown,unknown,unknown,,1942,Africa,Africa,2,gemini+chatgpt+user,Aviation memoir
-17,Candidate,Tracks,Robyn Davidson,unknown,unknown,unknown,,1980,Oceania / Australia,Oceania,2,gemini+chatgpt,Desert with camels
+17,Completed,Tracks,Robyn Davidson,unknown,unknown,unknown,,1980,Oceania / Australia,Oceania,2,gemini+chatgpt,Desert with camels
 18,Candidate,The Innocents Abroad,Mark Twain,unknown,unknown,unknown,,1869,Europe / Holy Land,Europe,2,gemini+user,Satire and humor
 19,Completed,Travels with Charley,John Steinbeck,unknown,unknown,unknown,,1962,North America,North America,2,gemini+chatgpt+user,Road trip across USA
 20,Completed,The Old Ways,Robert Macfarlane,unknown,unknown,unknown,,2012,Multiple,,3,gemini+chatgpt,Philosophy of walking
@@ -31,9 +31,9 @@ ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,au
 30,Candidate,A Moveable Feast,Ernest Hemingway,unknown,unknown,unknown,,1964,Europe / Paris,Europe,1,gemini,Lost Generation Paris
 31,Candidate,Seven Years in Tibet,Heinrich Harrer,unknown,unknown,unknown,,1952,Asia / Tibet,Asia,1,gemini+chatgpt,War memoir
 32,Candidate,Desert Solitaire,Edward Abbey,unknown,unknown,unknown,,1968,North America / Utah,North America,2,gemini+chatgpt,Wilderness environmentalism
-33,Candidate,The Rings of Saturn,W.G. Sebald,unknown,unknown,unknown,,1995,Europe / UK,Europe,3,gemini+chatgpt,Experimental literary
+33,HonorableMention,The Rings of Saturn,W.G. Sebald,unknown,unknown,unknown,,1995,Europe / UK,Europe,3,gemini+chatgpt,Experimental literary
 34,Completed,As I Walked Out One Midsummer Morning,Laurie Lee,unknown,unknown,unknown,,1969,Europe / Spain,Europe,2,gemini,Walking memoir
-35,Completed,Eat Pray Love,Elizabeth Gilbert,unknown,unknown,unknown,,2006,Multiple,,1,gemini,Transformational bestseller
+35,HonorableMention,Eat Pray Love,Elizabeth Gilbert,unknown,unknown,unknown,,2006,Multiple,,1,gemini,Transformational bestseller
 36,Completed,The Worst Journey in the World,Apsley Cherry-Garrard,unknown,unknown,unknown,,1922,Antarctica,Antarctica,1,gemini+chatgpt,Antarctic expedition
 37,Candidate,"Wind, Sand and Stars",Antoine de Saint-Exupéry,unknown,unknown,unknown,,1939,Africa / Sahara,Africa,2,gemini+chatgpt,Aviation literary
 38,Completed,An Area of Darkness,V.S. Naipaul,unknown,unknown,unknown,,1964,Asia / India,Asia,3,gemini+chatgpt,Controversial critique
@@ -42,32 +42,32 @@ ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,au
 41,Cut,Homage to Catalonia,George Orwell,unknown,unknown,unknown,,1938,Europe / Spain,Europe,2,gemini,Civil War reportage
 42,Candidate,Brazilian Adventure,Peter Fleming,unknown,unknown,unknown,,1933,South America,South America,2,gemini,Amazon expedition
 43,Candidate,The Lost City of Z,David Grann,unknown,unknown,unknown,,2009,South America / Amazon,South America,1,gemini,Modern mystery
-44,Candidate,Vagabonding,Rolf Potts,unknown,unknown,unknown,,2002,Multiple,,2,gemini+user,Long-term travel guide
+44,HonorableMention,Vagabonding,Rolf Potts,unknown,unknown,unknown,,2002,Multiple,,2,gemini+user,Long-term travel guide
 45,Candidate,The Salt Path,Raynor Winn,female,unknown,unknown,,2018,Europe / England,Europe,2,gemini+user,Coastal walking memoir along UK coast - homelessness and healing
 46,Candidate,Holidays in Hell,P.J. O'Rourke,unknown,unknown,unknown,,1988,Multiple,,2,gemini,Conflict zones satire
-47,Candidate,Coming into the Country,John McPhee,unknown,unknown,unknown,,1977,North America / Alaska,North America,2,gemini,Alaska reportage
+47,Completed,Coming into the Country,John McPhee,unknown,unknown,unknown,,1977,North America / Alaska,North America,2,gemini,Alaska reportage
 48,HonorableMention,Old Glory,Jonathan Raban,unknown,unknown,unknown,,1981,North America,North America,2,gemini+user,Mississippi River
 49,Completed,Travels with Myself and Another,Martha Gellhorn,unknown,unknown,unknown,,1978,Multiple,,2,gemini,War correspondent
 50,Candidate,A Cook's Tour,Anthony Bourdain,unknown,unknown,unknown,,2001,Multiple,,1,gemini,Culinary travel
 51,Completed,A Year in Provence,Peter Mayle,unknown,unknown,unknown,,1989,Europe / France,Europe,2,gemini,Expat comedy
 52,Candidate,Nothing to Declare,Mary Morris,unknown,unknown,unknown,,1988,Central America,,2,gemini,Mexico travel
-53,Candidate,The Motorcycle Diaries,Che Guevara,unknown,unknown,unknown,,1993,South America,South America,2,gemini,Political memoir
+53,Completed,The Motorcycle Diaries,Che Guevara,unknown,unknown,unknown,,1993,South America,South America,2,gemini,Political memoir
 54,Candidate,The Geography of Bliss,Eric Weiner,unknown,unknown,unknown,,2008,Multiple,,2,gemini+chatgpt,Happiness quest
 55,HonorableMention,Stranger in the Forest,Eric Hansen,unknown,unknown,unknown,,1988,Asia / Borneo,Asia,2,gemini,Rainforest trekking
 56,Candidate,Iron and Silk,Mark Salzman,unknown,unknown,unknown,,1986,Asia / China,Asia,2,gemini,Martial arts memoir
 57,Completed,The River at the Center of the World,Simon Winchester,unknown,unknown,unknown,,1996,Asia / China,Asia,2,gemini+user,Yangtze River
 58,Candidate,A Fortune-Teller Told Me,Tiziano Terzani,unknown,unknown,unknown,,1997,Asia,Asia,2,gemini,Fate and travel
-59,Candidate,Looking for Transwonderland,Noo Saro-Wiwa,unknown,unknown,unknown,,2012,Africa / Nigeria,Africa,3,gemini,Modern Nigeria
+59,Completed,Looking for Transwonderland,Noo Saro-Wiwa,unknown,unknown,unknown,,2012,Africa / Nigeria,Africa,3,gemini,Modern Nigeria
 60,Candidate,Bitter Lemons of Cyprus,Lawrence Durrell,unknown,unknown,unknown,,1957,Europe / Cyprus,Europe,3,gemini,1950s political crisis
 61,Candidate,Wild Coast,John Gimlette,unknown,unknown,unknown,,2011,South America,South America,2,gemini,Guyana / Suriname
 62,Candidate,Lost in Shangri-La,Mitchell Zuckoff,unknown,unknown,unknown,,2011,Oceania / New Guinea,Oceania,2,gemini,WWII survival
 63,Cut,Behind the Beautiful Forevers,Katherine Boo,unknown,unknown,unknown,,2012,Asia / India,Asia,3,gemini+chatgpt,Mumbai slums reportage
-64,Candidate,The Way of the World,Nicolas Bouvier,unknown,unknown,unknown,,1963,Asia,Asia,3,gemini+chatgpt,Geneva to Khyber Pass
+64,Completed,The Way of the World,Nicolas Bouvier,unknown,unknown,unknown,,1963,Asia,Asia,3,gemini+chatgpt,Geneva to Khyber Pass
 65,Candidate,Paris to the Moon,Adam Gopnik,unknown,unknown,unknown,,2000,Europe / France,Europe,2,gemini,Paris essays
 66,Cut,A Year in the Merde,Stephen Clarke,unknown,unknown,unknown,,2004,Europe / France,Europe,4,gemini,Expat satire
 67,Candidate,Sea and Sardinia,D.H. Lawrence,unknown,unknown,unknown,,1921,Europe / Italy,Europe,2,gemini,Literary travel
 68,Candidate,The Sex Lives of Cannibals,J. Maarten Troost,unknown,unknown,unknown,,2004,Oceania / Kiribati,Oceania,3,gemini+chatgpt,Gonzo humor
-69,Candidate,Arctic Dreams,Barry Lopez,unknown,unknown,unknown,,1986,Arctic,Arctic,3,gemini,Meditative nature
+69,Completed,Arctic Dreams,Barry Lopez,unknown,unknown,unknown,,1986,Arctic,Arctic,3,gemini,Meditative nature
 70,Candidate,The Man Who Walked Through Time,Colin Fletcher,unknown,unknown,unknown,,1968,North America,North America,2,gemini,Grand Canyon
 71,HonorableMention,The Fearful Void,Geoffrey Moorhouse,unknown,unknown,unknown,,1974,Africa / Sahara,Africa,3,gemini,Desert crossing
 72,Candidate,The Journals of Captain Cook,James Cook,unknown,unknown,unknown,,1768,Pacific,Oceania,2,gemini,Historical voyages
@@ -80,14 +80,14 @@ ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,au
 79,Candidate,The Falling Sky,Davi Kopenawa,unknown,unknown,unknown,,2013,South America / Amazon,South America,4,gemini,Indigenous perspective
 80,Candidate,My Journey to Lhasa,Alexandra David-Néel,unknown,unknown,unknown,,1927,Asia / Tibet,Asia,2,gemini,Early female explorer
 81,Candidate,Jupiter's Travels,Ted Simon,unknown,unknown,unknown,,1979,Multiple,,2,gemini,World by motorcycle
-82,Candidate,Travels in West Africa,Mary Kingsley,unknown,unknown,unknown,,1897,Africa,Africa,2,gemini,Victorian female explorer
-83,Candidate,Blood River,Tim Butcher,unknown,unknown,unknown,,2007,Africa / Congo,Africa,2,gemini,Congo River journey
+82,Completed,Travels in West Africa,Mary Kingsley,unknown,unknown,unknown,,1897,Africa,Africa,2,gemini,Victorian female explorer
+83,Completed,Blood River,Tim Butcher,unknown,unknown,unknown,,2007,Africa / Congo,Africa,2,gemini,Congo River journey
 84,Completed,Terra Incognita,Sara Wheeler,unknown,unknown,unknown,,1996,Antarctica,Antarctica,2,gemini,Female Antarctic
 85,Completed,Into the Heart of Borneo,Redmond O'Hanlon,unknown,unknown,unknown,,1984,Asia / Borneo,Asia,2,gemini+chatgpt+user,Humor and adventure
 86,Candidate,The Caliph's House,Tahir Shah,unknown,unknown,unknown,,2006,Africa / Morocco,Africa,2,gemini+chatgpt,Expat in Casablanca
 87,Candidate,One for the Road,Tony Horwitz,unknown,unknown,unknown,,1987,Oceania / Australia,Oceania,2,gemini,Hitchhiking
 88,Candidate,The Solace of Open Spaces,Gretel Ehrlich,unknown,unknown,unknown,,1985,North America / Wyoming,North America,2,gemini,Nature writing
-89,Cut,The Narrow Road to the Deep North,Matsuo Bashō,unknown,unknown,unknown,,1702,Asia / Japan,Asia,4,gemini,17th C haiku travel
+89,Completed,The Narrow Road to the Deep North,Matsuo Bashō,unknown,unknown,unknown,,1702,Asia / Japan,Asia,4,gemini,17th C haiku travel
 90,Candidate,The Voyage of the Beagle,Charles Darwin,unknown,unknown,unknown,,1839,South America,South America,2,gemini,Scientific expedition
 91,Candidate,Around the World on a Bicycle,Thomas Stevens,unknown,unknown,unknown,,1887,Multiple,,2,gemini,1880s cycling
 92,Candidate,The Cruel Way,Ella Maillart,unknown,unknown,unknown,,1947,Asia / Afghanistan,Asia,3,gemini,Wartime journey
@@ -115,7 +115,7 @@ ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,au
 114,HonorableMention,The Happy Isles of Oceania,Paul Theroux,unknown,unknown,unknown,,1992,Oceania,Oceania,2,chatgpt,Pacific kayaking
 115,HonorableMention,Oracle Bones,Peter Hessler,unknown,unknown,unknown,,2006,Asia / China,Asia,2,chatgpt,China archaeology
 116,Candidate,Out of Africa,Isak Dinesen,unknown,unknown,unknown,,1937,Africa / Kenya,Africa,1,chatgpt,Classic memoir
-117,HonorableMention,A House in Bali,Colin McPhee,unknown,unknown,unknown,,1946,Asia / Indonesia,Asia,3,chatgpt,Musical memoir
+117,Completed,A House in Bali,Colin McPhee,unknown,unknown,unknown,,1946,Asia / Indonesia,Asia,3,chatgpt,Musical memoir
 118,HonorableMention,No Mercy,Redmond O'Hanlon,unknown,unknown,unknown,,1997,Africa / Congo,Africa,2,chatgpt,Jungle adventure
 119,Cut,Pilgrim at Tinker Creek,Annie Dillard,unknown,unknown,unknown,,1974,North America,North America,2,chatgpt,Nature meditation
 120,HonorableMention,A Turn in the South,V.S. Naipaul,unknown,unknown,unknown,,1989,North America,North America,2,chatgpt,American South
@@ -127,12 +127,12 @@ ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,au
 126,HonorableMention,Trieste and the Meaning of Nowhere,Jan Morris,unknown,unknown,unknown,,2001,Europe / Italy,Europe,2,chatgpt,City meditation
 127,Candidate,A Pattern of Islands,Arthur Grimble,unknown,unknown,unknown,,1952,Oceania,Oceania,3,chatgpt,Colonial Pacific
 128,HonorableMention,The Japanese Journey,Nicolas Bouvier,unknown,unknown,unknown,,1989,Asia / Japan,Asia,3,chatgpt,Japan travel
-129,Candidate,Slow Boats to China,Gavin Young,unknown,unknown,unknown,,1983,Asia,Asia,2,chatgpt,Sea voyage
+129,HonorableMention,Slow Boats to China,Gavin Young,unknown,unknown,unknown,,1983,Asia,Asia,2,chatgpt,Sea voyage
 130,Candidate,The Zanzibar Chest,Aidan Hartley,unknown,unknown,unknown,,2003,Africa,Africa,2,user,War correspondent
 131,HonorableMention,At the Tomb of the Inflatable Pig,Matthew Parris,unknown,unknown,unknown,,2003,South America / Paraguay,South America,2,user,Offbeat Paraguay
 132,Cut,India,Geoffrey Moorehead,unknown,unknown,unknown,,,,,Asia / India,3,user
 133,HonorableMention,Travels with Herodotus,Ryszard Kapuściński,unknown,unknown,unknown,,2007,Multiple,,2,user,Philosophical reportage
-134,Candidate,Journey without Maps,Graham Greene,unknown,unknown,unknown,,1936,Africa / Liberia,Africa,3,user,West Africa trek
+134,HonorableMention,Journey without Maps,Graham Greene,unknown,unknown,unknown,,1936,Africa / Liberia,Africa,3,user,West Africa trek
 135,HonorableMention,Apples are from Kazakhstan,Christopher Robbins,unknown,unknown,unknown,,2008,Asia / Kazakhstan,Asia,3,user,Central Asia obscure
 136,HonorableMention,Hearing Birds Fly,Louisa Waugh,unknown,unknown,unknown,,2003,Asia / Mongolia,Asia,3,user,Mongolia immersion
 137,Candidate,Flame Trees of Thika,Elspeth Huxley,unknown,unknown,unknown,,1959,Africa / Kenya,Africa,2,user,Childhood memoir
@@ -144,7 +144,7 @@ ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,au
 143,HonorableMention,City of Djinns,William Dalrymple,unknown,unknown,unknown,,1993,Asia / India,Asia,2,user,Delhi historical
 144,Candidate,This Divided Island,Samanth Subramanian,unknown,unknown,unknown,,2014,Asia / Sri Lanka,Asia,3,user,Sri Lankan conflict
 145,Completed,From Heaven Lake,Vikram Seth,unknown,unknown,unknown,,1983,Asia / China,Asia,2,chatgpt+user,Hitchhiking China
-146,Completed,Endurance,Alfred Lansing,unknown,unknown,unknown,,1959,Antarctica,Antarctica,1,user,Shackleton expedition (3rd person)
+146,HonorableMention,Endurance,Alfred Lansing,unknown,unknown,unknown,,1959,Antarctica,Antarctica,1,user,Shackleton expedition (3rd person)
 147,Completed,Naples '44,Norman Lewis,unknown,unknown,unknown,,1978,Europe / Italy,Europe,2,user,WWII Naples
 149,Candidate,In Morocco,Edith Wharton,unknown,unknown,unknown,,1920,Africa / Morocco,Africa,3,user,Classic Morocco travel
 150,Candidate,Walking with Abel: Journeys with the Nomads of the African Savannah,Anna Badkhen,unknown,unknown,unknown,,2015,Africa / Mali,Africa,3,user,Fulani herders migration
@@ -159,3 +159,11 @@ ID,Status,Title,Author,author_gender,author_indigenous,author_person_of_color,au
 159,Completed,Travels with a Tangerine,Tim Mackintosh-Smith,male,no,no,,2001,North Africa / Middle East,Africa|Asia,2,user,Following Ibn Battutah from Morocco to Turkey - historical footsteps with Arabic scholarship
 160,Completed,Roads to Santiago,Cees Nooteboom,male,no,no,,1992,Europe / Spain,Europe,3,user,Wandering through Spain hunting Romanesque churches and Zurbarán paintings - literary detours
 161,Completed,Border,Kapka Kassabova,female,no,no,,2017,Europe / Balkans,Europe,3,user,Bulgaria-Turkey-Greece borderlands - Cold War ghosts and refugee stories
+162,Completed,Dark Continent My Black Arse,Sihle Khumalo,male,no,yes,,2007,Africa,Africa,3,user,Cape Town to Cairo by public transport - African perspective dismantling stereotypes
+163,Completed,My Traitor's Heart,Rian Malan,male,no,no,,1990,Africa / South Africa,Africa,3,user,Afrikaner journalist confronting apartheid violence and family legacy
+164,Completed,One Day I Will Write About This Place,Binyavanga Wainaina,male,no,yes,,2011,Africa / Kenya,Africa,3,user,Kenyan coming-of-age memoir - sensory and linguistic exploration
+165,Completed,When a Crocodile Eats the Sun,Peter Godwin,male,no,no,,2006,Africa / Zimbabwe,Africa,2,user,Zimbabwe's collapse under Mugabe - family memoir and political witness
+166,Completed,Indonesia Etc,Elizabeth Pisani,female,no,no,,2014,Asia / Indonesia,Asia,2,user,Exploring Indonesian archipelago - epidemiologist's witty political sociology
+167,HonorableMention,Zen and the Art of Motorcycle Maintenance,Robert M. Pirsig,male,no,no,,1974,North America,North America,2,user,Philosophical motorcycle journey - inquiry into quality and values
+168,Completed,The Turkish Embassy Letters,Lady Mary Wortley Montagu,female,no,no,,1763,Asia / Ottoman Empire,Asia,3,user,18th-century letters from Constantinople - pioneering female travel writer introducing smallpox inoculation
+169,Completed,Catfish and Mandala,Andrew X. Pham,male,no,yes,,1999,Asia / Vietnam,Asia,2,user,Vietnamese-American bicycle journey through Vietnam - refugee identity and family trauma
