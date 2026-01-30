@@ -18,3 +18,7 @@ __pycache__/
 
 # Generated manuscripts (local output only)
 *.docx
+
+# Database files (local tracking only)
+*.csv
+database/
