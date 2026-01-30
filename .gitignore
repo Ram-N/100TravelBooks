@@ -15,3 +15,6 @@ __pycache__/
 *.pem
 *token*
 *credentials*
+
+# Generated manuscripts (local output only)
+*.docx
